@@ -66,8 +66,7 @@ def data_generator():
 
 def redis_post(data):
     try:
-        # r.rpush(QUEUE_NAME, json.dumps(data))
-        print(json.dumps(data))
+        r.rpush(QUEUE_NAME, json.dumps(data))
     except Exception as e:
         print("Exception in redis post")
 
